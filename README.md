@@ -4,7 +4,7 @@ Um poema visual interativo que combina animação, som e interatividade para cri
 
 ## Características ✨
 
-- Coração 3D com efeito parallax
+- Coração com efeito parallax em 12 camadas
 - Animação de batimento cardíaco sincronizada com áudio
 - Efeito de máquina de escrever no poema
 - Design responsivo
@@ -16,14 +16,14 @@ Um poema visual interativo que combina animação, som e interatividade para cri
 - HTML5
 - CSS3 (Animações e Transformações)
 - JavaScript (Vanilla)
-- Parallax.js para efeitos 3D
+- Parallax.js para efeitos de profundidade
 - Google Fonts (Special Elite)
 
 ## Como Usar 🎮
 
 1. Visite: https://tatyquebralayout.github.io/coracaocomportado/
 2. Clique no botão "Iniciar Som" para começar a batida do coração
-3. Mova o mouse sobre o coração para ver o efeito parallax
+3. Mova o mouse sobre o coração para ver o efeito de profundidade
 4. Use as teclas de controle:
    - ↑ (Seta para cima): Aumenta o volume
    - ↓ (Seta para baixo): Diminui o volume
