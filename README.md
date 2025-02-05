@@ -1,36 +1,34 @@
+Let me help improve this README with better organization and clarity.
+
 # Coração Comportado 💗
 
-Um poema visual interativo que combina animação, som e interatividade para criar uma experiência poética única.
+Interactive visual poem combining animation, sound, and user interaction for a unique poetic experience.
 
-## Características ✨
+## Features ✨
+- Multi-layered heart with 12-layer parallax effect
+- Heartbeat animation synchronized with audio
+- Typewriter effect for poem display
+- Responsive design for all devices
+- Pure CSS visual effects
+- Interactive audio controls
 
-- Coração com efeito parallax em 12 camadas
-- Animação de batimento cardíaco sincronizada com áudio
-- Efeito de máquina de escrever no poema
-- Design responsivo
-- Efeitos visuais em CSS puro
-- Controles de áudio interativos
-
-## Tecnologias Utilizadas 🛠
-
-- HTML5
-- CSS3 (Animações e Transformações)
-- JavaScript (Vanilla)
-- Parallax.js para efeitos de profundidade
+## Tech Stack 🛠
+- HTML5/CSS3 (Animations & Transforms)
+- Vanilla JavaScript
+- Parallax.js
 - Google Fonts (Special Elite)
 
-## Como Usar 🎮
+## Usage 🎮
+Visit [Coração Comportado](https://tatyquebralayout.github.io/coracaocomportado/) and:
 
-1. Visite: https://tatyquebralayout.github.io/coracaocomportado/
-2. Clique no botão "Iniciar Som" para começar a batida do coração
-3. Mova o mouse sobre o coração para ver o efeito de profundidade
-4. Use as teclas de controle:
-   - ↑ (Seta para cima): Aumenta o volume
-   - ↓ (Seta para baixo): Diminui o volume
-   - M: Muta/Desmuta o som
+1. Click "Iniciar Som" to start heartbeat
+2. Move mouse over heart for depth effect
+3. Control audio:
+   - ↑: Volume up
+   - ↓: Volume down
+   - M: Toggle mute
 
-## Estrutura do Projeto 📁
-
+## Project Structure 📁
 ```
 .
 ├── assets/
@@ -47,12 +45,10 @@ Um poema visual interativo que combina animação, som e interatividade para cri
 └── index.html
 ```
 
-## Créditos 🙏
+## Credits 🙏
+- Poetry: "Coração Comportado"
+- Design & Development: [@tatyquebralayout](https://github.com/tatyquebralayout)
 
-- Poesia: "Coração Comportado"
-- Design e Desenvolvimento: @tatyquebralayout
-- Biblioteca Parallax.js: https://github.com/wagerfield/parallax
 
-## Licença 📄
-
-Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes. 
+## License 📄
+MIT License - See [LICENSE](LICENSE) file
