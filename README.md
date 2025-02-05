@@ -1,69 +1,99 @@
-# Coração Comportado 💗
+# Experimento #3: Coração Comportado 💗
 
-Um poema visual e interativo que combina um coração pulsante com versos sobre rebeldia e conformidade. O projeto usa efeitos visuais e sonoros para criar uma experiência imersiva onde o coração físico e metafórico se encontram.
+Experimento de visualização poética que explora a sincronização entre elementos visuais, sonoros e interativos. O projeto investiga a relação entre poesia e interface digital através de camadas sobrepostas de animação e interatividade.
 
-## Sobre o Projeto ✨
+## Conceito Experimental ✨
 
-O projeto apresenta um poema sobre um coração que finge seguir as regras mas guarda uma natureza rebelde. Esta dualidade é representada visualmente através de:
+O experimento busca traduzir a dualidade presente no poema (conformidade × rebeldia) em elementos técnicos interativos:
 
-- Um coração em camadas que pulsa no ritmo de uma batida cardíaca
-- Efeitos visuais que transitam do vermelho-púrpura ao vermelho-sangue
-- Texto que aparece gradualmente como uma confissão digitada
-- Som de batimento cardíaco que pode ser controlado pelo usuário
+- **Camadas Visuais**: 12 instâncias do mesmo SVG com diferentes opacidades e delays
+- **Sincronização**: Batimento cardíaco visual sincronizado com áudio em loop
+- **Temporização**: Delays calculados entre elementos visuais e sonoros
+- **Profundidade**: Implementação do efeito parallax com profundidades variáveis (0.0 a 2.4)
 
-## Efeitos Visuais 🎨
+## Implementação Técnica 🔧
 
-### Coração
-- 12 camadas com efeito parallax
-- Gradiente de cores do vermelho-púrpura ao vermelho-sangue
-- Animação de batimento sincronizada com áudio
-- Efeito de profundidade ao mover o mouse
+### Sistema de Camadas
+```javascript
+// Profundidades das camadas (data-depth)
+Base:    0.0    // Camada estática
+Moldura: 0.02   // Movimento sutil
+Corações: 0.2 a 2.4 (incrementos de 0.2)
+```
 
-### Poema
-- Fonte estilo máquina de escrever (Special Elite)
-- Efeito glitch no título
-- Aparição gradual dos versos
-- Destaque visual ao passar o mouse
+### Manipulação de Cores
+- **Filtros CSS**: Combinação de múltiplos filtros para gradiente de cores
+```css
+filter: invert(11%) sepia(45-100%) saturate(2576-5876%) 
+        hue-rotate(0-55deg) brightness(90%) contrast(115%)
+```
 
-## Interatividade 🎮
+### Sistema de Áudio
+- **Crossfade**: Implementação de dois players de áudio para transição suave
+- **Buffer**: Pré-carregamento de 0.1s para evitar gaps
+- **Volume**: Controle granular (steps de 0.1)
 
-### Controles de Áudio
-- Botão para iniciar/parar o som
-- Teclas de volume (↑/↓)
-- Tecla M para mutar/desmutar
-- Crossfade suave entre loops de áudio
+### Animações
+- **Heartbeat**: 6 keyframes com timing específico
+```css
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.15); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.08); }
+    60% { transform: scale(1); }
+}
+```
 
-### Efeitos do Mouse
-- Movimento parallax no coração
-- Hover effects nos versos do poema
-- Feedback visual nos botões
+### Tipografia Dinâmica
+- **Fonte**: Special Elite (simulação mecânica)
+- **Animação**: Entrada sequencial com delays calculados
+- **Glitch**: Dupla camada com animação reversa
 
-## Tecnologias 🛠
+## Stack Tecnológica 🛠
 
-- **HTML5** - Estrutura semântica
-- **CSS3** 
-  - Animações (@keyframes)
-  - Transformações
-  - Filtros de cor
-  - Efeitos de texto
-- **JavaScript**
-  - Controle de áudio com crossfade
-  - Interatividade do mouse
-  - Gerenciamento de estados
-- **Bibliotecas**
-  - Parallax.js para efeito de profundidade
-  - Google Fonts (Special Elite)
+### Front-end
+- **Markup**: HTML5 semântico
+- **Estilização**: CSS3
+  - Custom Properties
+  - Transforms
+  - Keyframe Animations
+  - CSS Filters
+  - Flexbox
+- **Comportamento**: JavaScript ES6+
+  - Event Listeners
+  - Audio API
+  - DOM Manipulation
+  - State Management
 
-## Como Usar 📱
+### Bibliotecas
+- **Parallax.js v3.1.0**: Gerenciamento de profundidade
+- **Google Fonts API**: Tipografia Special Elite
 
-1. Acesse: https://tatyquebralayout.github.io/coracaocomportado/
-2. Clique em "Iniciar Som" para começar a batida
-3. Mova o mouse sobre o coração para ver o efeito de profundidade
-4. Use os controles:
-   - ↑: Aumenta volume
-   - ↓: Diminui volume
-   - M: Muta/Desmuta
-   - Mouse: Explora efeitos visuais
+## Métricas e Performance 📊
+
+- **Camadas**: 14 elementos sobrepostos
+- **Animações**: 
+  - 1 animação principal (heartbeat)
+  - 12 variações de cor
+  - 5 sequências de texto
+- **Áudio**: 
+  - Taxa de amostragem: 44.1kHz
+  - Duração do loop: ~1s
+  - Crossfade: 100ms
+
+## Instalação e Desenvolvimento 💻
+
+1. Clone o repositório:
+```bash
+git clone https://github.com/tatyquebralayout/coracaocomportado.git
+```
+
+2. Abra `index.html` em um servidor local
+3. Para desenvolvimento, monitore:
+   - Sincronização de áudio
+   - Performance das animações
+   - Comportamento do parallax
 
 ## Estrutura do Projeto 📁
 
@@ -71,23 +101,23 @@ O projeto apresenta um poema sobre um coração que finge seguir as regras mas g
 .
 ├── assets/
 │   ├── images/
-│   │   ├── base.png      # Base do coração
-│   │   ├── heart.svg     # Camadas do coração
-│   │   └── moldura.png   # Moldura decorativa
+│   │   ├── base.png      # Camada base (depth: 0.0)
+│   │   ├── heart.svg     # Elemento replicado
+│   │   └── moldura.png   # Overlay decorativo
 │   └── sounds/
-│       └── heart-beat.mp3 # Som do batimento
+│       └── heart-beat.mp3 # Loop de batimento
 ├── css/
 │   └── style.css        # Estilos e animações
 ├── js/
-│   └── main.js          # Lógica interativa
-└── index.html           # Estrutura principal
+│   └── main.js          # Controladores e eventos
+└── index.html           # Estrutura DOM
 ```
 
 ## Créditos 🙏
 
-- **Poesia**: "Coração Comportado" - Uma reflexão sobre conformidade e rebeldia
-- **Design & Desenvolvimento**: [@tatyquebralayout](https://github.com/tatyquebralayout)
-- **Biblioteca**: [Parallax.js](https://github.com/wagerfield/parallax)
+- **Conceito & Poesia**: "Coração Comportado"
+- **Desenvolvimento**: [@tatyquebralayout](https://github.com/tatyquebralayout)
+- **Engine**: [Parallax.js](https://github.com/wagerfield/parallax)
 
 ## Licença 📄
 
