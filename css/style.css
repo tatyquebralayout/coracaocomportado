@@ -1,0 +1,326 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #6C0F01;
+    overflow: hidden;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.left-side {
+    width: 45%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.right-side {
+    width: 45%;
+    color: white;
+    padding: 20px;
+    font-family: 'Times New Roman', serif;
+    text-align: left;
+}
+
+.background {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+
+.background img.base {
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+    opacity: 0.8;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.background img.moldura {
+    position: absolute;
+    width: 127.5%;
+    height: 127.5%;
+    object-fit: contain;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+#scene {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.layer img.base {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+    opacity: 0.8;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.layer img.heart {
+    width: 55%;
+    height: 55%;
+    object-fit: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(0 0 15px rgba(0,0,0,0.2));
+}
+
+.layer img.moldura {
+    width: 127.5%;
+    height: 127.5%;
+    object-fit: contain;
+    z-index: 2;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes heartbeat {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    15% { transform: translate(-50%, -50%) scale(1.15); }
+    30% { transform: translate(-50%, -50%) scale(1); }
+    45% { transform: translate(-50%, -50%) scale(1.08); }
+    60% { transform: translate(-50%, -50%) scale(1); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Vermelho púrpura para as primeiras camadas */
+.heart-1 { 
+    opacity: 0.95;
+    animation: heartbeat 1s infinite;
+    animation-delay: 0s;
+    filter: invert(11%) sepia(100%) saturate(5876%) hue-rotate(0deg) brightness(90%) contrast(115%) drop-shadow(0 0 15px rgba(139,0,0,0.5));
+}
+.heart-2 { 
+    opacity: 0.90;
+    animation: heartbeat 1s infinite;
+    animation-delay: 0.05s;
+    filter: invert(11%) sepia(95%) saturate(5576%) hue-rotate(5deg) brightness(90%) contrast(115%) drop-shadow(0 0 15px rgba(139,0,0,0.5));
+}
+.heart-3 { 
+    opacity: 0.85;
+    animation: heartbeat 1s infinite;
+    animation-delay: 0.1s;
+    filter: invert(11%) sepia(90%) saturate(5276%) hue-rotate(10deg) brightness(90%) contrast(115%) drop-shadow(0 0 15px rgba(139,0,0,0.5));
+}
+.heart-4 { 
+    opacity: 0.80;
+    animation: heartbeat 1s infinite;
+    animation-delay: 0.15s;
+    filter: invert(11%) sepia(85%) saturate(4976%) hue-rotate(15deg) brightness(90%) contrast(115%) drop-shadow(0 0 15px rgba(139,0,0,0.5));
+}
+
+/* Transição para vermelho sangue */
+.heart-5 { 
+    opacity: 0.75;
+    animation: heartbeat 1s infinite;
+    animation-delay: 0.2s;
+    filter: invert(11%) sepia(80%) saturate(4676%) hue-rotate(20deg) brightness(90%) contrast(115%) drop-shadow(0 0 15px rgba(139,0,0,0.5));
+}
+.heart-6 { 
+    opacity: 0.70;
+    animation: heartbeat 1s infinite;
+    animation-delay: 0.25s;
+    filter: invert(11%) sepia(75%) saturate(4376%) hue-rotate(25deg) brightness(90%) contrast(115%) drop-shadow(0 0 15px rgba(139,0,0,0.5));
+}
+.heart-7 { 
+    opacity: 0.65;
+    animation: heartbeat 1s infinite;
+    animation-delay: 0.3s;
+    filter: invert(11%) sepia(70%) saturate(4076%) hue-rotate(30deg) brightness(90%) contrast(115%) drop-shadow(0 0 15px rgba(139,0,0,0.5));
+}
+.heart-8 { 
+    opacity: 0.60;
+    animation: heartbeat 1s infinite;
+    animation-delay: 0.35s;
+    filter: invert(11%) sepia(65%) saturate(3776%) hue-rotate(35deg) brightness(90%) contrast(115%) drop-shadow(0 0 15px rgba(139,0,0,0.5));
+}
+
+/* Vermelho sangue para as últimas camadas */
+.heart-9 { 
+    opacity: 0.55;
+    animation: heartbeat 1s infinite;
+    animation-delay: 0.4s;
+    filter: invert(11%) sepia(60%) saturate(3476%) hue-rotate(40deg) brightness(90%) contrast(115%) drop-shadow(0 0 15px rgba(139,0,0,0.5));
+}
+.heart-10 { 
+    opacity: 0.50;
+    animation: heartbeat 1s infinite;
+    animation-delay: 0.45s;
+    filter: invert(11%) sepia(55%) saturate(3176%) hue-rotate(45deg) brightness(90%) contrast(115%) drop-shadow(0 0 15px rgba(139,0,0,0.5));
+}
+.heart-11 { 
+    opacity: 0.45;
+    animation: heartbeat 1s infinite;
+    animation-delay: 0.5s;
+    filter: invert(11%) sepia(50%) saturate(2876%) hue-rotate(50deg) brightness(90%) contrast(115%) drop-shadow(0 0 15px rgba(139,0,0,0.5));
+}
+.heart-12 { 
+    opacity: 0.40;
+    animation: heartbeat 1s infinite;
+    animation-delay: 0.55s;
+    filter: invert(11%) sepia(45%) saturate(2576%) hue-rotate(55deg) brightness(90%) contrast(115%) drop-shadow(0 0 15px rgba(139,0,0,0.5));
+}
+
+.text {
+    color: white;
+    font-size: 5em;
+    font-family: Arial, sans-serif;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+button {
+    background-color: #6C0F01;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: white;
+    color: #6C0F01;
+}
+
+@keyframes typewriter {
+    from { 
+        opacity: 0; 
+        transform: translateX(-20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateX(0); 
+    }
+}
+
+@keyframes glitch {
+    0% { text-shadow: 2px 2px 4px rgba(255,0,0,0.4); }
+    25% { text-shadow: -2px -2px 4px rgba(0,255,255,0.4); }
+    50% { text-shadow: 2px -2px 4px rgba(255,0,0,0.4); }
+    75% { text-shadow: -2px 2px 4px rgba(0,255,255,0.4); }
+    100% { text-shadow: 2px 2px 4px rgba(255,0,0,0.4); }
+}
+
+.right-side h2 {
+    font-size: 2.5em;
+    margin-bottom: 35px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Special Elite', cursive;
+    animation: glitch 3s infinite;
+    position: relative;
+}
+
+.right-side h2::after {
+    content: 'Coração Comportado';
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    color: rgba(255,0,0,0.4);
+    width: 100%;
+    animation: glitch 2s infinite reverse;
+}
+
+.poem {
+    font-size: 0.9em;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    font-family: 'Special Elite', cursive;
+}
+
+.poem p {
+    margin-bottom: 25px;
+    padding-left: 15px;
+    border-left: 3px solid rgba(255,255,255,0.3);
+    word-spacing: 1px;
+    opacity: 0;
+    animation: typewriter 0.5s forwards;
+}
+
+.poem p:nth-child(1) { animation-delay: 0.5s; }
+.poem p:nth-child(2) { animation-delay: 1.5s; }
+.poem p:nth-child(3) { animation-delay: 2.5s; }
+.poem p:nth-child(4) { animation-delay: 3.5s; }
+.poem p:nth-child(5) { animation-delay: 4.5s; }
+
+.poem p:hover {
+    border-left-color: #ff3333;
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+.buttons-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 1000;
+}
+
+.buttons-container button {
+    padding: 10px 20px;
+    background-color: #6C0F01;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Special Elite', cursive;
+}
+
+.buttons-container button:hover {
+    background-color: white;
+    color: #6C0F01;
+    transform: scale(1.05);
+} 
